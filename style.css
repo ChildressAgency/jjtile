@@ -1,0 +1,1776 @@
+/*!
+Theme Name: j&jtile
+Author: roccons
+Author URI: http://habitatweb.mx/
+Description: This is a blank bootstrap theme for wordpress based on the Bootstrap Starter Wordpress theme by 3sparks llc. This version adds Gulp and the possibility to recompile Bootstrap css from Sass.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+/***********
+standard bootstrap sizes
+************/
+/***********
+variables
+here you can set the bootstrap variables that you want
+full variables file is located in
+../src/bootstrap-sass-version/assets/stylesheets/bootstrap/_variables
+************/
+/***********
+import bootstrap
+************/
+/*=========================== Variables ======================================*/
+/*================ Colors =====================*/
+/*======================== mixins ================================================*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.button, a.btn-main {
+  display: block;
+  position: relative;
+  border: solid 1px #fff;
+  color: #fff;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 10px;
+}
+
+.button-tan, .selectionList a.btn-main {
+  display: block;
+  position: relative;
+  border: solid 1px #e1caa2;
+  color: #e1caa2;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
+  margin: 10px 0 0 42px;
+  font-size: 10px;
+}
+
+.button-facebook, .facebookLink a.btn-main {
+  display: block;
+  position: relative;
+  float: right;
+  border: solid 1px #5881c1;
+  background-color: #5881c1;
+  color: #fff;
+  padding: 5px;
+  width: 125px;
+  text-align: center;
+  margin: 20px 0 0 0px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.button-grout, #groutContentArea .groutLeft a.btn-main, #groutContentArea .groutRight a.btn-main {
+  display: block;
+  position: relative;
+  border: solid 1px #211d1e;
+  color: #211d1e;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.button-grout:hover, #groutContentArea .groutLeft a.btn-main:hover, #groutContentArea .groutRight a.btn-main:hover {
+  border: solid 1px #fff;
+  color: #fff;
+  background-color: #211d1e;
+}
+
+.sprite, .aboutIcons .sprite-1, .aboutIcons .sprite-2, .aboutIcons .sprite-3, .aboutIcons .sprite-4, .aboutIcons .sprite-5 {
+  display: inline-block;
+  width: 143px;
+  height: 130.5px;
+  margin: 10px 5px 0 0;
+}
+
+/*Wordpress basic styles (those inserted by the editor)*/
+.entry-content img {
+  margin: 0 0 1.5em 0;
+}
+
+.alignleft, img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+
+.alignright, img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+
+.aligncenter, img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+
+.alignnone, img.alignnone {
+  /* not sure about this one */
+}
+
+.wp-caption {
+  margin-bottom: 1.5em;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+}
+
+.wp-caption p.wp-caption-text {
+  line-height: 1.5;
+  font-size: 10px;
+  margin: 0;
+}
+
+.wp-smiley {
+  margin: 0 !important;
+  max-height: 1em;
+}
+
+blockquote.left {
+  margin-right: 20px;
+  text-align: right;
+  margin-left: 0;
+  width: 33%;
+  float: left;
+}
+
+blockquote.right {
+  margin-left: 20px;
+  text-align: left;
+  margin-right: 0;
+  width: 33%;
+  float: right;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+#main-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/*======================= Header ============================================ */
+.navbar-default {
+  background-color: rgba(33, 29, 30, 0.8);
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.navbar-default .navbar-nav li a {
+  color: #f48321;
+}
+
+.navbar {
+  min-height: 60px;
+  z-index: 9999;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.navbar-brand {
+  padding: 10px 40px;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+}
+
+.navbar-header {
+  height: 20vh;
+}
+
+.nav-line {
+  display: block;
+  position: relative;
+  top: -20px;
+  width: 100%;
+  height: 1vh;
+  border-bottom: solid 2px rgba(33, 29, 30, 0.8);
+  background-color: transparent;
+  z-index: 9999;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.phone {
+  float: left;
+}
+
+.phone p {
+  color: #fff;
+  margin: 11px 0 0 0;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.phone a {
+  color: #fff;
+  font-size: 26px;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.phone a:hover {
+  color: #f48321;
+}
+
+.hours {
+  float: left;
+  margin: 10px 0 0 15px;
+}
+
+.hours P {
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+#hp-hero {
+  height: 100vh;
+}
+
+.carousel-inner {
+  height: 80vh;
+  top: -27px;
+  z-index: 99;
+}
+
+#mainPhoto {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 330px;
+  top: -229px;
+}
+
+#heroSection {
+  height: 100px;
+}
+
+#heroSection h1 {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  color: #f48321;
+  font-weight: 900;
+}
+
+#heroSection p {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.home #mainPhoto {
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -194px;
+  height: 100vh;
+}
+
+.caption-wrapper {
+  position: relative;
+  top: -530px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.caption-wrapper .caption h1 {
+  color: #f48321;
+  text-align: center;
+  font-weight: 900;
+}
+
+.caption-wrapper .caption h3 {
+  color: #fff;
+  text-align: center;
+}
+
+a.btn-main {
+  text-decoration: none;
+}
+
+a.btn-main:hover {
+  border: 1px solid #e1caa2;
+  color: #e1caa2;
+}
+
+.carousel-control {
+  top: initial;
+  left: auto;
+  z-index: 9999;
+  height: 50px;
+  width: 20px;
+  opacity: .8;
+  bottom: 30px;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  background-color: #211d1e;
+  background-image: none;
+  height: 60px;
+  width: 30px;
+  padding-top: 22px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+  top: initial;
+}
+
+.carousel-control.left {
+  background-image: none;
+  margin-left: 20px;
+}
+
+.carousel-control.right {
+  background-image: none;
+  right: auto;
+  margin-left: 64px;
+}
+
+#scrollDown {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+#scrollDown .glyphicon {
+  font-weight: 700;
+  display: block;
+  font-size: 27px;
+  color: #fff;
+}
+
+.sliderButtons {
+  display: block;
+  width: 100%;
+  height: 50px;
+  z-index: 9999;
+  position: absolute;
+  bottom: -48px;
+  left: 0;
+}
+
+.sliderButtons .left {
+  position: relative;
+  bottom: 127px;
+  float: right;
+}
+
+.sliderButtons .right {
+  position: relative;
+  bottom: 127px;
+  float: left;
+}
+
+.in {
+  background-color: #211d1e;
+}
+
+/*================================= Main SCSS ================================================*/
+#finance {
+  background-color: #211d1e;
+  color: #f48321;
+}
+
+#finance .leftFinance {
+  text-align: right;
+  padding-right: 0;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+#finance .leftFinance h2 {
+  font-size: 45px;
+  margin: 0 0 0 0;
+}
+
+#finance .rightFinance {
+  text-align: left;
+  padding-left: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#finance .rightFinance h3 {
+  padding: 0;
+  margin: 0 0 0 0;
+  font-size: 24px;
+}
+
+#finance .rightFinance h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 9px;
+}
+
+#aboutHomeSection {
+  background-color: #fff;
+  padding: 20px;
+}
+
+#aboutHomeSection .aboutContent h2 {
+  color: #f48321;
+  font-weight: 900;
+}
+
+#aboutHomeSection .aboutContent p {
+  color: #211d1e;
+}
+
+.aboutIcons h2 {
+  color: #211d1e;
+  font-weight: 700;
+}
+
+.aboutIcons .icons {
+  display: block;
+  min-height: 200px;
+  position: relative;
+  left: -20px;
+}
+
+.aboutIcons .spriteBox {
+  display: block;
+  width: 125px;
+  margin: 0 auto;
+}
+
+.aboutIcons .spriteBox a {
+  text-decoration: none;
+}
+
+.aboutIcons .spriteBox .spriteText {
+  display: block;
+  color: #211d1e;
+  position: relative;
+  top: 150px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.aboutIcons .spriteBox .spriteText:hover {
+  color: #f48321;
+}
+
+.aboutIcons .sprite-1 {
+  background: url(./images/learn-more-sprite-125.png);
+  background-position-y: -130.5px;
+  background-repeat: no-repeat;
+}
+
+.aboutIcons .sprite-1:hover {
+  background-position-y: 0;
+}
+
+.aboutIcons .sprite-2 {
+  background: url(./images/tile-sprite.png);
+  background-position-y: -130.5px;
+  background-repeat: no-repeat;
+}
+
+.aboutIcons .sprite-2:hover {
+  background-position-y: 0;
+}
+
+.aboutIcons .sprite-3 {
+  background: url(./images/grout-sprite-1.png);
+  background-position-y: -130.5px;
+  background-repeat: no-repeat;
+}
+
+.aboutIcons .sprite-3:hover {
+  background-position-y: 0;
+}
+
+.aboutIcons .sprite-4 {
+  background: url(./images/ruler-sprite-1.png);
+  background-position-y: -130.5px;
+  background-repeat: no-repeat;
+}
+
+.aboutIcons .sprite-4:hover {
+  background-position-y: 0;
+}
+
+.aboutIcons .sprite-5 {
+  background: url(./images/phone-sprite-1.png);
+  background-position-y: -130.5px;
+  background-repeat: no-repeat;
+}
+
+.aboutIcons .sprite-5:hover {
+  background-position-y: 0;
+}
+
+#selections {
+  background: url(./images/selections-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -127px;
+}
+
+.selectionList {
+  padding: 60px 0px;
+}
+
+.selectionList ul {
+  list-style: none;
+}
+
+.selectionList ul li a {
+  color: #f48321;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.selectionList ul li a:hover {
+  color: rgba(244, 131, 33, 0.5);
+}
+
+.selectionList a.btn-main {
+  text-decoration: none;
+}
+
+.selectionList a.btn-main:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+#brands {
+  background-color: #211d1e;
+}
+
+#brands h2 {
+  color: #f48321;
+  text-align: center;
+}
+
+.grid {
+  padding: 20px;
+}
+
+.grid-item {
+  width: 180px;
+  padding: 20px;
+}
+
+.grid-item img {
+  display: block;
+  margin: 10px auto;
+  width: 180px;
+  position: relative;
+  left: -20px;
+  transition: all .2s ease-in-out;
+}
+
+.grid-item img:hover {
+  transform: scale(1.1);
+}
+
+.reviewHeader h2 {
+  color: #211d1e;
+  padding: 0 0 0 0;
+  margin: 20px 0 0 0;
+  font-size: 22px;
+}
+
+.reviewHeader p {
+  color: #939393;
+  padding-bottom: 20px;
+  font-size: 12px;
+}
+
+.facebookLink a.btn-main {
+  text-decoration: none;
+}
+
+.facebookLink a.btn-main:hover {
+  border: 1px solid #5881c1;
+  color: #5881c1;
+  background-color: #fff;
+}
+
+.facebookWidgetArea {
+  overflow-y: scroll;
+  max-height: 150px;
+}
+
+.contact-form {
+  background-color: #ededef;
+}
+
+.contact-form h2 {
+  background-color: #f48321;
+  color: #211d1e;
+  font-weight: 800;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-form .form-control {
+  border: none;
+  box-shadow: none;
+  color: #211d1e;
+  border-bottom: 1px solid #211d1e;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.contact-form ::placeholder {
+  color: #211d1e;
+}
+
+.contact-form input.wpcf7-form-control.wpcf7-submit {
+  display: block;
+  background-color: transparent;
+  margin: 0 auto;
+  border: 1px solid #211d1e;
+  padding: 4px;
+}
+
+.facebookPlugin {
+  display: block;
+  margin: 0 auto;
+  max-width: 340px;
+  width: 100%;
+  padding-top: 35px;
+}
+
+.contactInfo ul {
+  list-style: none;
+  padding-top: 40px;
+}
+
+.contactInfo ul li {
+  padding: 20px 0;
+  height: 100px;
+}
+
+.contactInfo ul li a {
+  color: #211d1e;
+  font-size: 18px;
+}
+
+.contactInfo ul li a span {
+  float: left;
+}
+
+.contactInfo ul li a .mailIcon {
+  background: url(./images/mail-icon-sprite-1.png);
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 44.5px;
+  display: block;
+  margin-right: 20px;
+}
+
+.contactInfo ul li a .mailIcon:hover {
+  background-position-y: -44.5px;
+}
+
+.contactInfo ul li a .phoneIcon {
+  background: url(./images/phone-icon-sprite-1.png);
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 44.5px;
+  display: block;
+  margin-right: 20px;
+}
+
+.contactInfo ul li a .phoneIcon:hover {
+  background-position-y: -44.5px;
+}
+
+.contactInfo ul li a .mapIcon {
+  background: url(./images/map-icon-sprite-1.png);
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 44.5px;
+  display: block;
+  margin-right: 20px;
+}
+
+.contactInfo ul li a .mapIcon:hover {
+  background-position-y: -44.5px;
+}
+
+.contactInfo ul li a .shopIcon {
+  background: url(./images/shop-icon-sprite-1.png);
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 44.5px;
+  display: block;
+  margin-right: 20px;
+}
+
+.contactInfo ul li a .shopIcon:hover {
+  background-position-y: -44.5px;
+}
+
+.iconBackground {
+  display: inline-block;
+  background-color: #ededef;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+#aboutIconArea .scrollDown .glyphicon {
+  color: #211d1e;
+  width: 36px;
+  margin: 0 auto;
+  display: block;
+  font-size: 36px;
+  top: -46px;
+}
+
+#aboutIconArea a {
+  text-decoration: none;
+}
+
+#video {
+  margin-top: -40px;
+  background-color: #211d1e;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.videoLeft {
+  display: block;
+}
+
+.videoRight {
+  display: block;
+  padding-top: 30px;
+  color: #f48321;
+  text-align: center;
+}
+
+.videoRight h2 {
+  font-size: 150px;
+  padding: 0;
+  margin: 0;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.videoRight h3 {
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+.videoRight h4 {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.page-id-17 #mainPhoto {
+  height: 380px;
+}
+
+.page-id-17 #heroSection h1 {
+  color: #fff;
+  top: 250px;
+}
+
+#contactInfo {
+  display: block;
+  background: url(./images/map-background-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 34px;
+}
+
+#contact-2 .reviewHeader {
+  margin-top: 40px;
+}
+
+#contact-2 .facebookLink {
+  margin-top: 40px;
+}
+
+#followUs {
+  background-color: #ededef;
+  padding-bottom: 60px;
+}
+
+#followUs h2 {
+  text-align: center;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+}
+
+#followUs .twitter {
+  display: block;
+  float: left;
+  background-image: url(./images/twitter-sprite-1.png);
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  height: 50px;
+  width: 50px;
+  margin: 15px 10px 0 0;
+}
+
+#followUs .twitter:hover {
+  background-position-y: 0px;
+}
+
+#followUs .instagram {
+  display: block;
+  float: left;
+  background-image: url(./images/instagram-sprite-1.png);
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  height: 50px;
+  width: 50px;
+  margin: 15px 10px 0 0;
+}
+
+#followUs .instagram:hover {
+  background-position-y: 0px;
+}
+
+#followUs .linkedIn {
+  display: block;
+  float: left;
+  background-image: url(./images/linkedIn-sprite-1.png);
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  height: 50px;
+  width: 50px;
+  margin: 15px 10px 0 0;
+}
+
+#followUs .linkedIn:hover {
+  background-position-y: 0px;
+}
+
+#followUs .facebook {
+  display: block;
+  float: left;
+  background-image: url(./images/facebook-sprite-1.png);
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  height: 50px;
+  width: 50px;
+  margin: 15px 0px 0 0;
+}
+
+#followUs .facebook:hover {
+  background-position-y: 0px;
+}
+
+#followUs .socialLinks {
+  display: block;
+  width: 230px;
+  margin: 0 auto;
+  height: 85px;
+}
+
+#followUs .fb_iframe_widget {
+  display: block;
+  max-width: 297px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+/* centered columns styles */
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+.special img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 20px 10px;
+}
+
+#ourWork .carousel-inner {
+  height: auto;
+  margin-top: 40px;
+}
+
+#ourWork .ceramic {
+  background-image: url(./images/ceramic-tinted.png);
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+#ourWork .carousel-control {
+  bottom: 38px;
+  left: 60%;
+}
+
+#ourWork .nav li a:hover {
+  background: transparent;
+}
+
+#ourWork .att-nav ul li {
+  text-align: center;
+}
+
+#ourWork .att-nav ul li a {
+  color: #f48321;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+#ourWork .att-nav ul li a:hover {
+  color: #fff;
+}
+
+#groutContentArea {
+  background-color: #ededef;
+  margin-top: -50px;
+  padding-top: 50px;
+}
+
+#groutContentArea .groutLeft a.btn-main {
+  float: right;
+}
+
+#groutContentArea .groutRight a.btn-main {
+  float: left;
+}
+
+#groutContentArea .stpLogo {
+  padding-bottom: 20px;
+}
+
+#groutContentArea .stpLogo img {
+  display: block;
+  margin: 0 auto;
+}
+
+#groutContentArea .stpList {
+  padding: 0 5px;
+}
+
+#groutContentArea .stpList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+#groutContentArea .stpList ul li {
+  font-size: 10px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+#groutContentArea .stpList ul li span {
+  display: inline;
+  font-size: 8px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-weight: 700;
+}
+
+#groutColors {
+  padding: 20px;
+}
+
+#groutColors h3 {
+  color: #f48321;
+  font-size: 18px;
+}
+
+#groutColors ul {
+  list-style: none;
+  padding: 10px;
+}
+
+#groutColors ul li {
+  float: left;
+  padding: 5px;
+  height: 85px;
+  width: 65px;
+}
+
+#groutColors ul li .colorBox-2 {
+  width: 55px;
+  height: 55px;
+  border: solid 1px transparent;
+  transition: all .5s ease-in-out;
+}
+
+#groutColors ul li .colorBox-2:hover {
+  width: 80px;
+  position: absolute;
+  padding: 5px;
+  transform: scale(1.2);
+}
+
+#groutColors ul li img {
+  transition: all .5s ease-in-out;
+}
+
+#groutColors ul li img:hover {
+  width: 100px;
+  position: absolute;
+  padding: 5px;
+  transform: scale(1.5);
+}
+
+#groutColors ul li p {
+  font-size: 8px;
+}
+
+#video-2 {
+  background-color: #211d1e;
+  padding: 40px 0;
+}
+
+#tileContentArea .tileContent {
+  padding: 20px;
+}
+
+/* Bounce To Bottom */
+.hvr-bounce-to-bottom {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.hvr-bounce-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-bounce-to-bottom:hover, .hvr-bounce-to-bottom:focus, .hvr-bounce-to-bottom:active {
+  color: white;
+}
+
+.hvr-bounce-to-bottom:hover:before, .hvr-bounce-to-bottom:focus:before, .hvr-bounce-to-bottom:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.virtualDesignerContainer {
+  margin-top: 0px;
+}
+
+.virtualDesignerControls {
+  padding: 10px 32px;
+  background-color: #ededef;
+}
+
+.virtualDesignerControls h3 {
+  color: #f48321;
+}
+
+.virtualDesignerControls h4 {
+  color: #f48321;
+  font-size: 12px;
+}
+
+.virtualDesignerControls a {
+  color: #000;
+  text-decoration: none;
+}
+
+.virtualDesignerControls a:active {
+  font-weight: 900;
+}
+
+.virtualDesignerControls a#bathroom {
+  margin-left: 40px;
+}
+
+.virtualDesignerControls ul {
+  width: 300px;
+  list-style: none;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.virtualDesignerControls ul li {
+  width: 50px;
+  float: left;
+  padding-left: 0px;
+  height: 60px;
+}
+
+.virtualDesignerControls ul li img {
+  width: 35px;
+}
+
+.virtualDesignerControls ul li p {
+  font-size: 8px;
+}
+
+.kitchenBackground {
+  position: relative;
+  background-image: url(./images/virtual-designer-background-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 242px;
+  z-index: 100;
+}
+
+.bathroomBackground {
+  position: relative;
+  background-image: url(./images/bathroom-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 242px;
+  z-index: 100;
+}
+
+.tileBackground {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  height: 242px;
+  width: 100%;
+  z-index: 99;
+}
+
+.colorBox {
+  width: 35px;
+  height: 35px;
+  border: solid 1px transparent;
+}
+
+/*===tabs ===*/
+.virtualDesignerControls .nav-tabs {
+  border-color: transparent;
+}
+
+.virtualDesignerControls .nav-tabs li {
+  width: 80px;
+}
+
+.virtualDesignerControls .nav-tabs li a {
+  color: #000;
+}
+
+.virtualDesignerControls .nav-tabs li.roomSelector {
+  position: relative;
+  height: 20px;
+  top: -17px;
+}
+
+.virtualDesignerControls .nav-tabs > li.active > a, .virtualDesignerControls .nav-tabs > li.active > a:focus, .virtualDesignerControls .nav-tabs > li.active > a:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.virtualDesignerControls .nav-tabs > li.active > a, .virtualDesignerControls .nav-tabs > li.active > a:focus, .virtualDesignerControls .nav-tabs > li.active > a:hover {
+  color: #000;
+}
+
+.virtualDesignerControls .nav > li > a:focus, .virtualDesignerControls .nav > li > a:hover {
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: 900;
+}
+
+/*================Footer =============*/
+footer {
+  background-color: #3e3934;
+}
+
+#darkBar {
+  position: relative;
+  top: 30px;
+  padding: 0;
+  background-color: #211d1e;
+}
+
+#darkBar .navbar-brand {
+  float: none;
+  padding: 18px 0;
+}
+
+#darkBar .navbar-brand img {
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
+
+.footerSocials {
+  position: relative;
+  clear: both;
+  padding-bottom: 10px;
+  left: 20px;
+  height: 60px;
+  width: 242px;
+  margin: 0 auto;
+}
+
+.footerSocials .twitter {
+  display: block;
+  float: left;
+  background-image: url(./images/twitter-sprite-1.png);
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  margin: 20px 10px 0 0;
+}
+
+.footerSocials .twitter:hover {
+  background-position-y: -50px;
+}
+
+.footerSocials .instagram {
+  display: block;
+  float: left;
+  background-image: url(./images/instagram-sprite-1.png);
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  margin: 20px 10px 0 0;
+}
+
+.footerSocials .instagram:hover {
+  background-position-y: -50px;
+}
+
+.footerSocials .linkedIn {
+  display: block;
+  float: left;
+  background-image: url(./images/linkedIn-sprite-1.png);
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  margin: 20px 10px 0 0;
+}
+
+.footerSocials .linkedIn:hover {
+  background-position-y: -50px;
+}
+
+.footerSocials .facebook {
+  display: block;
+  float: left;
+  background-image: url(./images/facebook-sprite-1.png);
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  margin: 20px 10px 0 0;
+}
+
+.footerSocials .facebook:hover {
+  background-position-y: -50px;
+}
+
+.footerInfo {
+  color: #fff;
+}
+
+.footerInfo h3 {
+  font-size: 13px;
+  padding: 0px 0 0 0;
+  margin: 1px 0 1px 0;
+}
+
+.footerInfo h4 {
+  font-size: 15px;
+  padding: 5px 0 0 0;
+}
+
+.footerInfo a {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.footerInfo a:hover {
+  color: #f48321;
+}
+
+.footerHours {
+  margin-top: 10px;
+}
+
+.footerLeft {
+  color: #fff;
+}
+
+.footerLeft p {
+  margin-top: 20px;
+}
+
+.footerLeft p:first-child {
+  margin-top: 40px;
+}
+
+.footerRight h2 {
+  color: #fff;
+  padding: 20px 0 0 32px;
+}
+
+.footer-nav .nav {
+  padding-left: 0;
+}
+
+.footer-nav ul li {
+  padding: 0 20px;
+}
+
+.footer-nav ul li a {
+  color: #f48321;
+  font-size: 20px;
+}
+
+.footer-nav ul li a:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.footerBottom {
+  padding-top: 30px;
+}
+
+.footerBottom p {
+  text-align: center;
+  color: #f48321;
+}
+
+.footerBottom p a {
+  color: #f48321;
+}
+
+/*================================================== Note==============================================================================*/
+/*============================== Any thing added to the  main css directly please add below this line =================================*/
+/*================================ if added in the responsive css please make comments of additions ===================================*/
+/* responsive settings */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Sass Bootstrap */
+/* Small devices (tablets, 424px and up) ====================================================================================================*/
+@media (min-width: 424px) {
+  #selections {
+    background-position-x: 0;
+  }
+  #groutContentArea .stpList ul {
+    padding: 0 0 20px 10px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) ====================================================================================================*/
+@media (min-width: 768px) {
+  .navbar-brand {
+    padding: 5px 20px;
+  }
+  .navbar-brand img {
+    height: 30px;
+  }
+  .flex {
+    display: block;
+    float: left;
+    width: initial;
+    position: relative;
+    left: 40px;
+  }
+  .phone p {
+    font-size: 8px;
+  }
+  .phone a {
+    font-size: 11px;
+  }
+  .nav {
+    position: relative;
+    top: 15px;
+  }
+  .nav li a {
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+  .navbar-header {
+    height: 8vh;
+  }
+  .in {
+    background-color: transparent;
+  }
+  #heroSection {
+    height: 135px;
+  }
+  #mainPhoto {
+    top: -195px;
+  }
+  .home #mainPhoto {
+    background-position-x: 0px;
+    top: 0;
+  }
+  .carousel-inner {
+    top: -30px;
+    height: 92vh;
+  }
+  .sliderButtons {
+    bottom: 100px;
+  }
+  .sliderButtons a.btn-main {
+    width: 180px;
+    font-size: 15px;
+  }
+  .grid-item img {
+    left: 0;
+  }
+  #finance .leftFinance h2 {
+    font-size: 70px;
+    font-weight: 900;
+  }
+  #finance .rightFinance h3 {
+    font-size: 40px;
+    font-weight: 900;
+  }
+  #finance .rightFinance h4 {
+    font-size: 19px;
+  }
+  .videoLeft {
+    width: 65%;
+    float: left;
+  }
+  .videoRight {
+    padding-top: 19%;
+    width: 35%;
+    float: left;
+  }
+  #follow .fb_iframe_widget {
+    float: right;
+  }
+  #ourWork .carousel-control {
+    left: 70%;
+  }
+  #ourWork .att-nav ul li {
+    width: 140px;
+    margin-bottom: 6.5px;
+  }
+  #ourWork .carousel-inner {
+    margin-top: 62px;
+  }
+  #groutContentArea .stpList ul li {
+    font-size: 12px;
+  }
+  #groutContentArea .stpList ul li span {
+    font-size: 10px;
+  }
+  #groutColors {
+    padding: 20px 20px 70px 20px;
+  }
+  #groutColors .centered {
+    display: block;
+    width: 415px;
+    margin: 0 auto;
+  }
+  .footerInfo a {
+    font-size: 17px;
+  }
+  #tileContentArea .tileContent {
+    padding: 40px;
+  }
+  .tileBackground {
+    height: 400px;
+  }
+  .kitchenBackground {
+    height: 400px;
+  }
+  .bathroomBackground {
+    height: 400px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) ==================================================================================================*/
+@media (min-width: 992px) {
+  .navbar-brand img {
+    height: 40px;
+  }
+  .navbar-header {
+    position: relative;
+    top: 14px;
+  }
+  .carousel-inner {
+    top: -30px;
+  }
+  .phone p {
+    font-size: 10px;
+  }
+  .phone a {
+    font-size: 24px;
+  }
+  .flex {
+    left: 80px;
+  }
+  .nav {
+    top: 20px;
+    padding-left: 0px;
+  }
+  .nav li a {
+    padding: 20px 11px;
+    font-size: 14px;
+  }
+  .sliderButtons a.btn-main {
+    width: 220px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid #fff;
+  }
+  .sliderButtons a.btn-main:hover {
+    border: solid 2px #e1caa2;
+  }
+  #main-container {
+    margin-top: -20px;
+  }
+  #heroSection {
+    height: 155px;
+  }
+  #finance .leftFinance h2 {
+    font-size: 130px;
+  }
+  #finance .rightFinance h3 {
+    font-size: 72px;
+  }
+  #finance .rightFinance h4 {
+    font-size: 35px;
+  }
+  .selectionList ul li a {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  .selectionList a.btn-main {
+    border: 2px solid #e1caa2;
+    width: 200px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .videoRight h2 {
+    font-size: 200px;
+  }
+  .videoRight h3 {
+    font-size: 42px;
+  }
+  .videoRight h4 {
+    font-size: 22px;
+  }
+  .page-id-17 #heroSection h1 {
+    font-size: 60px;
+  }
+  .contactInfo ul li a {
+    font-size: 15px;
+  }
+  #contact-2 {
+    padding-bottom: 40px;
+  }
+  #contact-2 .facebookWidgetArea {
+    max-height: 390px;
+  }
+  #followUs h2 {
+    font-size: 48px;
+  }
+  #ourWork .att-nav {
+    margin-top: 10px;
+  }
+  #ourWork .att-nav ul li {
+    width: 180px;
+  }
+  #ourWork .att-nav ul li a {
+    padding: 12.2px 0;
+  }
+  .virtualDesignerControls {
+    padding: 20px 50px;
+  }
+  .virtualDesignerControls .form-control {
+    width: 284px;
+  }
+  .designerBlock {
+    padding-left: 0;
+  }
+  .virtualDesignerBackground {
+    height: 691px;
+  }
+  .tileBackground {
+    height: 691px;
+    background-size: contain;
+    width: 980px;
+    background-position-y: 434px;
+  }
+  .footerSocials {
+    margin-bottom: 10px;
+    clear: none;
+    padding-top: 0px;
+    left: 32px;
+    width: 272px;
+    margin-left: -32px;
+  }
+  .footerInfo h3 {
+    font-size: 18px;
+    margin: 4px 0 1px 0;
+  }
+  #darkBar .navbar-brand img {
+    margin: 16px auto 0 auto;
+  }
+  .virtualDesignerControls .nav-tabs li.roomSelector {
+    top: -46px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up)============================================================================================ */
+@media (min-width: 1200px) {
+  .nav {
+    padding-left: 80px;
+  }
+  #heroSection h1 {
+    font-size: 50px;
+    font-weight: 900;
+  }
+  #heroSection p {
+    font-size: 20px;
+  }
+  #mainPhoto {
+    height: 350px;
+  }
+  #aboutContent {
+    margin-top: 20px;
+  }
+  .selectionList ul li a {
+    font-size: 42px;
+  }
+  .selectionList a.btn-main {
+    width: 240px;
+    font-size: 18px;
+  }
+  #brands h2 {
+    font-size: 32px;
+  }
+  .contactInfo ul li a {
+    font-size: 18px;
+  }
+  #ourWork .nav {
+    padding-left: 0;
+  }
+  #ourWork .att-nav ul li {
+    width: 220px;
+    margin-bottom: 8px;
+  }
+  #ourWork .att-nav ul li a {
+    font-size: 22px;
+    padding: 16.6px 0;
+  }
+  #ourWork .carousel-control {
+    left: 82%;
+  }
+  .tileBackground {
+    width: 1200px;
+    background-position-y: 371px;
+  }
+}
+
+/* Large devices (large desktops, 1600px and up)============================================================================================ */
+@media (min-width: 1600px) {
+  .tileBackground {
+    width: 1280px;
+    height: 750px;
+    background-position-y: 381px;
+  }
+  .virtualDesignerBackground {
+    height: 750px;
+  }
+  .virtualDesignerControls {
+    padding: 50px 200px;
+  }
+}
+
+/***********
+theme styles
+here you can directley add styles or import additional sass files
+feel free to use @extend to apply bootstrap classes and bootstrap variables
+************/

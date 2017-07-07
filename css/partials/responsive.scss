@@ -1,0 +1,452 @@
+/* responsive settings */
+$screen-xl-min: 1600px;
+$screen-lg-min: 1200px;
+$screen-md-min: 992px;
+$screen-sm-min: 768px;
+$screen-xs-min: 424px;
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Sass Bootstrap */
+/* Small devices (tablets, 424px and up) ====================================================================================================*/
+@media (min-width: $screen-xs-min) {
+  #selections{
+    background-position-x: 0;
+  }
+  #groutContentArea{
+    .stpList{
+      ul{
+        padding: 0 0 20px 10px;
+      }
+    }
+  }
+
+}
+/* Small devices (tablets, 768px and up) ====================================================================================================*/
+@media (min-width: $screen-sm-min) {
+  .navbar-brand{
+    padding:5px 20px;
+    img{
+      height: 30px;
+    }
+  }
+  .flex{
+    display: block;
+    float:left;
+    width: initial;
+    position: relative;
+    left:40px;
+  }
+  .phone{
+    p{
+      font-size: 8px;
+    }
+    a{
+      font-size: 11px;
+    }
+  }
+  .nav{
+    position: relative;
+    top:15px;
+    li{
+
+      a{
+        padding:10px 6px;
+        font-size: 10px;
+      }
+    }
+  }
+  .navbar-header{
+    height:8vh;
+
+  }
+  .in{
+    background-color: transparent;
+  }
+  #heroSection{
+    height:135px;
+  }
+  #mainPhoto{
+    top:-195px;
+  }
+  .home{
+    #mainPhoto{
+      background-position-x: 0px;
+      top:0
+    }
+  }
+  .carousel-inner{
+    top:-30px;
+    height: 92vh;
+  }
+  .sliderButtons{
+    bottom: 100px;
+    a.btn-main{
+      width:180px;
+      font-size: 15px;
+    }
+  }
+  .grid-item{
+    img{
+      left:0;
+    }
+  }
+  #finance{
+    .leftFinance{
+      h2{
+        font-size: 70px;
+        font-weight: 900;
+      }
+    }
+    .rightFinance{
+      h3{
+        font-size: 40px;
+        font-weight: 900;
+      }
+      h4{
+        font-size: 19px;
+      }
+    }
+  }
+  .videoLeft{
+    width:65%;
+    float: left;
+  }
+  .videoRight{
+    padding-top: 19%;
+    width:35%;
+    float:left;
+  }
+  #follow{
+    .fb_iframe_widget{
+      float:right;
+    }
+  }
+  #ourWork{
+    .carousel-control{
+      left:70%;
+    }
+    .att-nav{
+      ul{
+        li{
+          width:140px;
+          margin-bottom: 6.5px;
+          a{
+            //padding: 5px 10px;
+          }
+        }
+      }
+    }
+    .carousel-inner{
+      margin-top: 62px;
+    }
+
+  }
+  #groutContentArea{
+    .stpList{
+      ul{
+        li{
+          font-size: 12px;
+          span{
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  #groutColors{
+    padding: 20px 20px 70px 20px;
+    .centered{
+      display: block;
+      width: 415px;
+      margin:0 auto;
+    }
+  }
+  .footerInfo{
+    a{
+      font-size: 17px;
+    }
+  }
+  .footerSocials{
+
+  }
+  #tileContentArea{
+    .tileContent{
+      padding: 40px;
+    }
+  }
+  .tileBackground{
+    background-size: cover;
+  }
+  #virtualDesigner{
+    //margin-top: -15px;
+  }
+}
+/* Medium devices (desktops, 992px and up) ==================================================================================================*/
+@media (min-width: $screen-md-min) {
+  .navbar-brand{
+    img{
+      height:40px;
+    }
+  }
+  .navbar-header{
+    position: relative;
+    top:14px;
+  }
+  .carousel-inner{
+    top:-30px;
+  }
+  .phone{
+    p{
+      font-size: 10px;
+    }
+    a{
+      font-size: 24px;
+    }
+  }
+  .flex{
+    left:80px;
+  }
+  .nav{
+    top:20px;
+    padding-left:0px;
+    li{
+      a{
+        padding: 20px 11px;
+        font-size: 14px;
+      }
+    }
+  }
+  .sliderButtons{
+    a.btn-main{
+      width:220px;
+      font-size: 18px;
+      font-weight: 600;
+      border: 2px solid #fff;
+      &:hover{
+        border:solid 2px $tan;
+      }
+    }
+  }
+  #main-container{
+    margin-top: -20px;
+  }
+  #heroSection{
+    height:155px;
+  }
+  #finance{
+    .leftFinance{
+      h2{
+        font-size: 130px;
+      }
+    }
+    .rightFinance{
+      h3{
+        font-size:72px;
+      }
+      h4{
+        font-size: 35px;
+      }
+    }
+  }
+  .selectionList{
+    ul{
+      li{
+        a{
+          font-size: 32px;
+          font-weight: 600;
+        }
+      }
+    }
+    a.btn-main{
+      border:2px solid $tan;
+      width: 200px;
+      font-size: 14px;
+      font-weight: 700;
+
+    }
+  }
+  .videoLeft{
+
+  }
+  .videoRight{
+    h2{
+      font-size: 200px;
+    }
+    h3{
+      font-size: 42px;
+    }
+    h4{
+      font-size: 22px;
+    }
+  }
+  .page-id-17{
+    #heroSection{
+      h1{
+        font-size: 60px;
+      }
+    }
+  }
+  .contactInfo{
+    ul{
+      li{
+        a{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  #contact-2{
+    padding-bottom: 40px;
+    .facebookWidgetArea{
+      max-height: 390px;
+    }
+  }
+  #followUs{
+    h2{
+      font-size: 48px;
+    }
+  }
+  #ourWork{
+    .att-nav{
+      margin-top:10px;
+      ul{
+        li{
+          width:180px;
+
+          a{
+            padding:12.2px 0;
+          }
+        }
+      }
+    }
+  }
+  .virtualDesignerControls{
+    padding: 20px 50px;
+    .form-control{
+      width:284px;
+    }
+  }
+  .virtualDesignerContainer {
+    //margin-top: 5px;
+  }
+  .designerBlock{
+    padding-left:0;
+
+  }
+  .virtualDesignerBackground{
+    height: 691px;
+
+  }
+  .tileBackground{
+    height: 691px;
+    background-size: contain;
+    width:980px;
+    background-position-y: 434px;
+  }
+  .footerSocials{
+    margin-bottom: 10px;
+    clear: none;
+    padding-top: 0px;
+    left: 32px;
+    width: 272px;
+    margin-left: -32px;
+  }
+  .footerInfo{
+    h3{
+      font-size: 18px;
+      margin:4px 0 1px 0;
+    }
+  }
+  #darkBar{
+    .navbar-brand{
+      img{
+        margin: 16px auto 0 auto;
+      }
+    }
+  }
+}
+/* Large devices (large desktops, 1200px and up)============================================================================================ */
+@media (min-width: $screen-lg-min) {
+  .nav{
+    padding-left:80px;
+  }
+  #heroSection{
+    h1{
+      font-size: 50px;
+      font-weight: 900;
+    }
+    p{
+      font-size: 20px;
+    }
+  }
+  #mainPhoto{
+    height: 350px;
+  }
+  #aboutContent{
+    margin-top: 20px;
+  }
+  .selectionList{
+    ul{
+      li{
+        a{
+          font-size: 42px;
+        }
+      }
+    }
+    a.btn-main{
+      width: 240px;
+      font-size: 18px;
+    }
+  }
+  #brands{
+    h2{
+      font-size: 32px;
+    }
+  }
+  .contactInfo{
+    ul{
+      li{
+        a{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  #ourWork{
+    .nav{
+      padding-left: 0;
+    }
+    .att-nav{
+      ul{
+        li{
+          width: 220px;
+          margin-bottom: 8px;
+          a{
+            font-size: 22px;
+            padding: 16.6px 0;
+          }
+        }
+      }
+    }
+    .carousel-control{
+      left:82%;
+    }
+  }
+  .tileBackground{
+    width: 1200px;
+    background-position-y: 371px;
+  }
+}
+/* Large devices (large desktops, 1600px and up)============================================================================================ */
+@media (min-width: $screen-xl-min) {
+  .tileBackground{
+    width: 1280px;
+    height: 750px;
+    background-position-y: 381px;
+  }
+  .virtualDesignerBackground {
+    height: 750px;
+  }
+  .virtualDesignerControls{
+    padding: 50px 200px;
+  }
+}

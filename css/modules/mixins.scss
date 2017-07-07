@@ -1,0 +1,61 @@
+/*======================== mixins ================================================*/
+.button{
+  display: block;
+  position: relative;
+  border: solid 1px #fff;
+  color: #fff;
+  padding: 5px ;
+  width: 130px;
+  text-align: center;
+  margin:0 auto;
+  font-size: 10px;
+}
+.button-tan{
+  display: block;
+  position: relative;
+  border: solid 1px $tan;
+  color: $tan;
+  padding: 5px ;
+  width: 130px;
+  text-align: center;
+  margin:10px 0 0 42px;
+  font-size: 10px;
+}
+.button-facebook{
+  display: block;
+  position: relative;
+  float: right;
+  border: solid 1px $facebook-blue;
+  background-color: $facebook-blue;
+  color: #fff;
+  padding: 5px ;
+  width: 125px;
+  text-align: center;
+  margin:20px 0 0 0px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.button-grout{
+  display: block;
+  position: relative;
+  border: solid 1px $dark-brown;
+  color: $dark-brown;
+  padding: 5px ;
+  width: 130px;
+  text-align: center;
+  margin:0 auto 30px auto;
+  font-size: 10px;
+  text-decoration: none;
+  &:hover{
+    border: solid 1px #fff;
+    color: #fff;
+    background-color: $dark-brown;
+  }
+}
+.sprite{
+  display: inline-block;
+  width: 143px;
+  height: 130.5px;
+  margin: 10px 5px 0 0;
+
+}

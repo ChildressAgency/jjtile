@@ -1,0 +1,149 @@
+/*================Footer =============*/
+footer{
+  background-color: $footer-color;
+}
+#darkBar{
+  position: relative;
+  top:30px;
+  padding: 0;
+  background-color: $dark-brown;
+  .navbar-brand{
+    float:none;
+    padding: 18px 0;
+    img{
+      height:auto;
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+    }
+  }
+}
+.footerSocials{
+  position: relative;
+    clear: both;
+    padding-bottom: 10px;
+    left: 20px;
+    height: 60px;
+    width: 242px;
+    margin: 0 auto;
+  .twitter{
+    display: block;
+    float: left;
+    background-image: url(./images/twitter-sprite-1.png);
+    background-repeat: no-repeat;
+    height:50px;
+    width:50px;
+    margin: 20px 10px 0 0;
+    &:hover{
+      background-position-y:-50px;
+    }
+  }
+  .instagram{
+    display: block;
+    float: left;
+    background-image: url(./images/instagram-sprite-1.png);
+    background-repeat: no-repeat;
+    height:50px;
+    width:50px;
+    margin: 20px 10px 0 0;
+    &:hover{
+      background-position-y:-50px;
+    }
+  }
+  .linkedIn{
+    display: block;
+    float: left;
+    background-image: url(./images/linkedIn-sprite-1.png);
+    background-repeat: no-repeat;
+    height:50px;
+    width:50px;
+    margin: 20px 10px 0 0;
+    &:hover{
+      background-position-y:-50px;
+    }
+  }
+  .facebook{
+    display: block;
+    float: left;
+    background-image: url(./images/facebook-sprite-1.png);
+    background-repeat: no-repeat;
+    height:50px;
+    width:50px;
+    margin: 20px 10px 0 0;
+    &:hover{
+      background-position-y:-50px;
+    }
+  }
+}
+.footerInfo{
+  color:#fff;
+  h3{
+    font-size: 13px;
+    padding:0px 0 0 0;
+    margin:1px 0 1px 0;
+  }
+  h4{
+    font-size: 15px;
+    padding:5px 0 0 0;
+  }
+  a{
+    color: #fff;
+    font-size: 18px;
+    margin-top:5px;
+    text-decoration: none;
+    &:hover{
+      color:$orange;
+    }
+  }
+}
+.footerHours{
+  margin-top:10px;
+}
+.footerLeft{
+  color: #fff;
+  p{
+    margin-top: 20px;
+  }
+  p:first-child{
+    margin-top:40px;
+  }
+}
+.footerRight{
+  h2{
+    color:#fff;
+    padding: 20px 0 0 32px;
+  }
+}
+.footer-nav{
+  .nav{
+    padding-left: 0;
+  }
+  ul{
+    li{
+      padding: 0 20px;
+      a{
+        color:$orange;
+        font-size: 20px;
+        &:hover{
+          background-color: transparent;
+          color:#fff;
+        }
+      }
+    }
+  }
+
+}
+.footerBottom{
+  padding-top: 30px;
+  p{
+    text-align: center;
+    color: $orange;
+    a{
+      color:$orange;
+
+    }
+  }
+}
+/*================================================== Note==============================================================================*/
+/*============================== Any thing added to the  main css directly please add below this line =================================*/
+/*================================ if added in the responsive css please make comments of additions ===================================*/
