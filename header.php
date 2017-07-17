@@ -21,38 +21,39 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
 
-    <section id="hp-hero" class="carousel slide" data-ride="carousel">
 
       <nav class="navbar navbar-default" role="navigation">
         <div class="container">
-        <div class="row">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="col-sm-2 navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-new.png" alt=" Logo" class="logo-img"></a>
-              <div class="col-sm-5 flex">
-                <div class="phone">
-                  <p>FREDERICKSBURG LOCATION</p>
-                  <a href="tel:5407100303">540-710-0303</a>
-                </div>
-                <div class="hours">
-                  <p>
-                    MON - WED 8A - 6P<br />
-                    THU - FRI 8A - 7P<br />
-                    SAT 8A - 5P
-                  </p>
-                </div>
-              </div><!-- flex -->
-            </div>
+            <a class="header-logo" href="<?php echo home_url(); ?>">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/logo-new.png" alt=" Logo" class="logo-img">
+            </a>
+            <div class="header-contact-info">
+              <div class="phone">
+                <p>FREDERICKSBURG LOCATION</p>
+                <a href="tel:5407100303">540-710-0303</a>
+              </div>
+              <div class="hours">
+                <p>MON - WED 8A - 6P<br />THU - FRI 8A - 7P<br />SAT 8A - 5P</p>
+              </div>
+            </div><!-- flex -->
+          </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class=" col-sm-5 collapse navbar-collapse">
-           <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- row-->
-      </div>
+           <?php 
+            wp_nav_menu( array(
+              'menu' => 'Main', 
+              'menu_class' => 'nav navbar-nav navbar-right', 
+              'depth'=> 3, 
+              'container'=> 'div', 
+              'container_class' => 'navbar-collapse collapse',
+              'container_id' => 'navbar',
+              'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
+        </div>
       </nav>
 
       <div class="nav-line"></div>
@@ -60,6 +61,7 @@
       <?php if(is_front_page()): ?>
 
 
+    <section id="hp-hero" class="carousel slide" data-ride="carousel">
 
       <div class="carousel-inner" role="listbox">
         <?php
