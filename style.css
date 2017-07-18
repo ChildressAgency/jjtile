@@ -22,17 +22,29 @@ import bootstrap
 /*=========================== Variables ======================================*/
 /*================ Colors =====================*/
 /*======================== mixins ================================================*/
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-.button, a.btn-main {
-  display: block;
-  position: relative;
+
+body{
+  font-family:Heebo, sans-serif;
+}
+
+.button, 
+.btn-main {
+  display: inline-block;
   border: solid 1px #fff;
   color: #fff;
-  padding: 5px;
-  width: 130px;
+  padding: 5px 15px;
   text-align: center;
-  margin: 0 auto;
-  font-size: 10px;
+  font-size: 20px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.button:hover,
+.button:focus,
+.btn-main:hover,
+.btn-main:focus{
+  color:#f48321;
+  border-color:#f48321;
+  text-decoration:none;
 }
 
 .button-tan, .selectionList a.btn-main {
@@ -203,6 +215,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .nav>li>a{
   font-size:14px;
+  text-transform:uppercase;
 }
 
 .nav-line {
@@ -254,6 +267,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #hp-hero {
   height: 100vh;
 }
+#hp-hero .carousel-inner{
+  height:100%;
+}
+#hp-hero .item{
+  height:100%;
+}
+#hp-hero .background-wrapper{
+  display:table;
+  height:100%;
+  width:100%;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#hp-hero .caption-wrapper{
+  display:table-cell;
+  vertical-align:middle;
+  padding-left:15px;
+  padding-right:15px;
+}
+#hp-hero .slider-buttons{
+  margin-top:40px;
+  text-align:center;
+}
+#hp-hero .slider-buttons>.btn-main{
+  min-width:220px;
+}
 
 #mainPhoto {
   position: relative;
@@ -291,13 +330,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   height: 100vh;
 }
 
-.caption-wrapper {
-  position: relative;
-  top: -530px;
-  width: 75%;
-  margin: 0 auto;
-}
-
 .caption-wrapper .caption h1 {
   color: #f48321;
   text-align: center;
@@ -307,15 +339,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .caption-wrapper .caption h3 {
   color: #fff;
   text-align: center;
-}
-
-a.btn-main {
-  text-decoration: none;
-}
-
-a.btn-main:hover {
-  border: 1px solid #e1caa2;
-  color: #e1caa2;
 }
 
 .carousel-control {
@@ -369,28 +392,6 @@ a.btn-main:hover {
   display: block;
   font-size: 27px;
   color: #fff;
-}
-
-.sliderButtons {
-  display: block;
-  width: 100%;
-  height: 50px;
-  z-index: 9999;
-  position: absolute;
-  bottom: -48px;
-  left: 0;
-}
-
-.sliderButtons .left {
-  position: relative;
-  bottom: 127px;
-  float: right;
-}
-
-.sliderButtons .right {
-  position: relative;
-  bottom: 127px;
-  float: left;
 }
 
 .in {
@@ -1438,8 +1439,22 @@ footer {
   }
 }
 
+@media (max-width:767px){
+  .header-logo,
+  .header-contact-info{
+    margin-left:15px;
+  }
+  #hp-hero .slider-buttons>.btn-main+.btn-main{
+    margin-top:15px;
+  }
+}
+
 /* Small devices (tablets, 768px and up) ====================================================================================================*/
 @media (min-width: 768px) {
+  #hp-hero .slider-buttons>.btn-main+.btn-main{
+    margin-left:15px;
+  }
+
   .flex {
     display: block;
     float: left;
@@ -1462,13 +1477,6 @@ footer {
   .home #mainPhoto {
     background-position-x: 0px;
     top: 0;
-  }
-  .sliderButtons {
-    bottom: 100px;
-  }
-  .sliderButtons a.btn-main {
-    width: 180px;
-    font-size: 15px;
   }
   .grid-item img {
     left: 0;
@@ -1547,15 +1555,6 @@ footer {
   }
   .nav {
     padding-left: 0px;
-  }
-  .sliderButtons a.btn-main {
-    width: 220px;
-    font-size: 18px;
-    font-weight: 600;
-    border: 2px solid #fff;
-  }
-  .sliderButtons a.btn-main:hover {
-    border: solid 2px #e1caa2;
   }
   #main-container {
     margin-top: -20px;

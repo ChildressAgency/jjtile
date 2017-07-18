@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
     <?php wp_head(); ?>
 
 	</head>
@@ -63,35 +62,26 @@
         <div class="carousel-inner" role="listbox">
           <?php if( have_rows('home_slider') ): $i=1; while ( have_rows('home_slider') ) : the_row(); ?>
             <div class="item <?php if ($i == 1) echo 'active'; ?> ">
-              <div class="slide-background" style="background-image: url(<?php  the_sub_field('slider_image'); ?>);"></div>
-              <div class="caption-wrapper">
-                <div class="caption">
-                  <h1><?php the_sub_field('slider_title'); ?></h1>
-                  <h3><?php the_sub_field('slider_sub-title'); ?></h3>
-                </div><!-- caption -->
-              </div><!-- caption-wrapper -->
+              <div class="background-wrapper" style="background-image: url(<?php  the_sub_field('slider_image'); ?>); <?php the_sub_field('slider_image_css'); ?>">
+                <div class="caption-wrapper">
+                  <div class="caption">
+                    <h1><?php the_sub_field('slider_title'); ?></h1>
+                    <h3><?php the_sub_field('slider_sub-title'); ?></h3>
+                    <div class="slider-buttons ">
+                      <a href="<?php echo home_url(); ?>/our-work/" class="btn-main">OUR WORK</a>
+                      <a href="<?php echo home_url(); ?>/virtual-designer/" class="btn-main">VIRTUAL DESIGNER</a>
+                    </div><!-- sliderButtons -->
+                  </div><!-- caption -->
+                </div><!-- caption-wrapper -->
+              </div>
             </div><!-- item -->
           <?php $i++;  endwhile; endif; ?>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="sliderButtons ">
-              <div class="col-xs-6">
-                <div class="left">
-                  <a href="<?php echo home_url(); ?>/our-work/" class="btn-main">OUR WORK</a>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="right">
-                  <a href="<?php echo home_url(); ?>/virtual-designer/" class="btn-main">VIRTUAL DESIGNER</a>
-                </div>
-              </div>
-            </div><!-- sliderButtons -->
-            <a href="#finance" id="scrollDown">
-              <span class="glyphicon glyphicon-menu-down"></span>
-            </a>
-          </div><!-- row -->
-        </div><!-- contaner -->
+        
+        <a href="#finance" id="scrollDown">
+          <span class="glyphicon glyphicon-menu-down"></span>
+        </a>
+
           <!-- Controls -->
         <a class="left carousel-control" href="#hp-hero" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -112,9 +102,7 @@
         <?php endif; ?>
 
         <?php if(get_field('hero_sub-title')): ?>
-          <?php the_field('hero_sub-title'); ?>
-        <?php else: ?>
-          <?php echo get_the_sub-title(); ?>
+          <h3><?php the_field('hero_sub-title'); ?></h3>
         <?php endif; ?>
       </section><!-- heroSection -->
     <?php endif; ?>
