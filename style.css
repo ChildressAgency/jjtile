@@ -171,22 +171,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /*======================= Header ============================================ */
-.navbar-default {
-  background-color: rgba(33, 29, 30, 0.8);
-  border-color: transparent;
-  border-radius: 0;
+.navbar.navbar-default {
+  background-color: rgba(33, 29, 30, 0.5);
+  border:none;  
+  z-index: 9999;
+  margin-bottom:0;
+  padding-top:10px;
+  position:absolute;
+  width:100%;
 }
 
 .navbar-default .navbar-nav li a {
   color: #f48321;
-}
-
-.navbar {
-  min-height: 60px;
-  z-index: 9999;
-  margin-bottom:0;
-  padding-top:10px;
-  padding-bottom:10px;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
@@ -210,14 +206,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .nav-line {
-  display: block;
-  position: relative;
-  top: -20px;
-  width: 100%;
-  height: 1vh;
-  border-bottom: solid 2px rgba(33, 29, 30, 0.8);
-  background-color: transparent;
-  z-index: 9999;
+  position:absolute;
+  bottom:-7px;
+  height:3px;
+  width:100%;
+  background-color:rgba(33,29,30,.5);
 }
 
 .flex {
