@@ -47,16 +47,14 @@ body{
   text-decoration:none;
 }
 
-.button-tan, .selectionList a.btn-main {
-  display: block;
-  position: relative;
-  border: solid 1px #e1caa2;
-  color: #e1caa2;
-  padding: 5px;
-  width: 130px;
-  text-align: center;
-  margin: 10px 0 0 42px;
-  font-size: 10px;
+.btn-main.btn-tan{
+  color:#dfcaa3;
+  border-color:#dfcaa3
+}
+.btn-main.btn-tan:hover,
+.btn-main.btn-tan:focus{
+  color:#fff;
+  border-color:#fff;
 }
 
 .button-facebook, .facebookLink a.btn-main {
@@ -171,15 +169,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Heebo', sans-serif;
   font-weight: 500;
   line-height: 1.1;
-}
-
-#main-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.clearfix {
-  clear: both;
 }
 
 /*======================= Header ============================================ */
@@ -334,11 +323,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #f48321;
   text-align: center;
   font-weight: 900;
+  font-size:42px;
+  margin-top:0;
+  margin-bottom:0;
 }
 
 .caption-wrapper .caption h3 {
   color: #fff;
   text-align: center;
+  margin-top:0;
+  margin-bottom:0;
+  font-weight:normal;
 }
 
 .carousel-control {
@@ -394,45 +389,55 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #fff;
 }
 
-.in {
-  background-color: #211d1e;
+.navbar-default .navbar-toggle{
+  border-color:#fff;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color:#fff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus{
+  border-color:#f48321;
+  background:transparent;
+}
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar{
+  background-color:#f48321;
 }
 
 /*================================= Main SCSS ================================================*/
 #finance {
   background-color: #211d1e;
   color: #f48321;
+  padding-top:10px;
 }
-
-#finance .leftFinance {
-  text-align: right;
-  padding-right: 0;
-  margin-top: 25px;
-  margin-bottom: 30px;
+#finance .media-group{
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
 }
-
-#finance .leftFinance h2 {
-  font-size: 45px;
-  margin: 0 0 0 0;
+#finance .media-left h2{
+  font-size:150px;
+  font-weight:900;
+  margin-top:0;
+  margin-bottom:0;
+  line-height:1em;
 }
-
-#finance .rightFinance {
-  text-align: left;
-  padding-left: 5px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+#finance .media-header h3{
+  font-size:74px;
+  font-weight:500;
+  margin-top:0;
+  margin-bottom:0;
+  line-height:1em;
+  text-transform:uppercase;
 }
-
-#finance .rightFinance h3 {
-  padding: 0;
-  margin: 0 0 0 0;
-  font-size: 24px;
-}
-
-#finance .rightFinance h4 {
-  padding: 0;
-  margin: 0;
-  font-size: 9px;
+#finance .media-body h4{
+  font-size:36px;
+  font-weight:400;
+  margin-top:0;
+  margin-bottom:0;
+  line-height:1em;
+  text-transform:uppercase;
 }
 
 #aboutHomeSection {
@@ -538,34 +543,27 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   background: url(./images/selections-background.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: -127px;
+  background-position:right top;
 }
 
 .selectionList {
   padding: 60px 0px;
+  max-width:375px;
+  margin-left:auto;
+  margin-right:0;
 }
 
 .selectionList ul {
   list-style: none;
+  color:#f48321;
+  font-size:42px;
+  font-weight:500;
+  padding-left:0;
 }
-
-.selectionList ul li a {
-  color: #f48321;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.selectionList ul li a:hover {
-  color: rgba(244, 131, 33, 0.5);
-}
-
-.selectionList a.btn-main {
-  text-decoration: none;
-}
-
-.selectionList a.btn-main:hover {
-  color: #fff;
-  border-color: #fff;
+.selectionList .btn-main{
+  width:240px;
+  display:block;
+  margin-top:20px;
 }
 
 #brands {
@@ -575,6 +573,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #brands h2 {
   color: #f48321;
   text-align: center;
+  font-size:36px;
+  font-weight:400;
+}
+.brand-list{
+  text-align:center;
+}
+.brand-list .list-inline>li{
+  padding:25px 40px;
 }
 
 .grid {
@@ -597,6 +603,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .grid-item img:hover {
   transform: scale(1.1);
+}
+
+#reviews{
+  margin-top:40px;
 }
 
 .reviewHeader h2 {
@@ -628,7 +638,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .contact-form {
-  background-color: #ededef;
+  background-color: #edede5;
 }
 
 .contact-form h2 {
@@ -646,6 +656,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   border-bottom: 1px solid #211d1e;
   border-radius: 0;
   background-color: transparent;
+}
+.wpcf7-form-control-wrap.phone{
+  float:none;
 }
 
 .contact-form ::placeholder {
@@ -819,6 +832,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .page-id-17 #heroSection h1 {
   color: #fff;
   top: 250px;
+}
+
+#contact{
+  margin-top:60px;
+}
+#contact .contact-form .form-group{
+  margin-left:15px;
+  margin-right:15px;
 }
 
 #contactInfo {
@@ -1258,12 +1279,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /*================Footer =============*/
 footer {
   background-color: #3e3934;
+  margin-top:60px;
+  padding-top:30px;
 }
 
 #darkBar {
   position: relative;
-  top: 30px;
-  padding: 0;
+  padding-top:15px;
+  padding-bottom:5px;
   background-color: #211d1e;
 }
 
@@ -1272,31 +1295,18 @@ footer {
   padding: 18px 0;
 }
 
-#darkBar .navbar-brand img {
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  width: 150px;
-}
-
 .footerSocials {
-  position: relative;
-  clear: both;
-  padding-bottom: 10px;
-  left: 20px;
-  height: 60px;
-  width: 242px;
-  margin: 0 auto;
+  text-align:center;
+}
+.footerSocials>a{
+  display:inline-block;
 }
 
 .footerSocials .twitter {
-  display: block;
-  float: left;
   background-image: url(./images/twitter-sprite-1.png);
   background-repeat: no-repeat;
   height: 50px;
   width: 50px;
-  margin: 20px 10px 0 0;
 }
 
 .footerSocials .twitter:hover {
@@ -1304,13 +1314,10 @@ footer {
 }
 
 .footerSocials .instagram {
-  display: block;
-  float: left;
   background-image: url(./images/instagram-sprite-1.png);
   background-repeat: no-repeat;
   height: 50px;
   width: 50px;
-  margin: 20px 10px 0 0;
 }
 
 .footerSocials .instagram:hover {
@@ -1318,13 +1325,10 @@ footer {
 }
 
 .footerSocials .linkedIn {
-  display: block;
-  float: left;
   background-image: url(./images/linkedIn-sprite-1.png);
   background-repeat: no-repeat;
   height: 50px;
   width: 50px;
-  margin: 20px 10px 0 0;
 }
 
 .footerSocials .linkedIn:hover {
@@ -1332,13 +1336,10 @@ footer {
 }
 
 .footerSocials .facebook {
-  display: block;
-  float: left;
   background-image: url(./images/facebook-sprite-1.png);
   background-repeat: no-repeat;
   height: 50px;
   width: 50px;
-  margin: 20px 10px 0 0;
 }
 
 .footerSocials .facebook:hover {
@@ -1357,52 +1358,54 @@ footer {
 
 .footerInfo h4 {
   font-size: 15px;
-  padding: 5px 0 0 0;
+  margin-top:0;
+  margin-bottom:0;
+  font-weight:400;
 }
 
 .footerInfo a {
   color: #fff;
-  font-size: 18px;
-  margin-top: 5px;
+  font-size: 31px;
   text-decoration: none;
+  line-height:1em;
+  font-weight:500;
 }
 
 .footerInfo a:hover {
   color: #f48321;
 }
-
-.footerHours {
-  margin-top: 10px;
+.footerHours>p{
+  margin-bottom:0;
+  font-size:14px;
+  line-height:1.2em;
 }
 
 .footerLeft {
   color: #fff;
+  margin-top:25px;
+}
+.footerLeft p{
+  font-size:12px;
 }
 
-.footerLeft p {
-  margin-top: 20px;
+.footerRight{
+  margin-top:25px;
 }
-
-.footerLeft p:first-child {
-  margin-top: 40px;
-}
-
 .footerRight h2 {
   color: #fff;
-  padding: 20px 0 0 32px;
+  font-size:20px;
+  font-weight:400;
+  margin-top:0;
 }
-
-.footer-nav .nav {
-  padding-left: 0;
-}
-
-.footer-nav ul li {
-  padding: 0 20px;
+.footer-nav>ul{
+  column-count:3;
+  text-transform:uppercase;
+  padding-left:0;
 }
 
 .footer-nav ul li a {
   color: #f48321;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .footer-nav ul li a:hover {
@@ -1431,9 +1434,6 @@ footer {
 /* No media query since this is the default in Sass Bootstrap */
 /* Small devices (tablets, 424px and up) ====================================================================================================*/
 @media (min-width: 424px) {
-  #selections {
-    background-position-x: 0;
-  }
   #groutContentArea .stpList ul {
     padding: 0 0 20px 10px;
   }
@@ -1444,8 +1444,37 @@ footer {
   .header-contact-info{
     margin-left:15px;
   }
+  .navbar-collapse {
+    background-color: #211d1e;
+  }
   #hp-hero .slider-buttons>.btn-main+.btn-main{
     margin-top:15px;
+  }
+  #finance .media-group{
+    max-width:280px;
+    padding-bottom:10px;
+  }
+  #finance .media-left h2{
+    font-size:60px;
+  }
+  #finance .media-header h3{
+    font-size:36px;
+  }
+  #finance .media-body h4{
+    font-size:17px;
+  }
+  .footerInfo{
+    margin-top:25px;
+  }
+  .footer-nav>ul{
+    column-count:2;
+  }
+}
+@media (max-width:991px){
+  .footer-logo{
+    display:block;
+    text-align:center;
+    margin-bottom:25px;
   }
 }
 
@@ -1480,17 +1509,6 @@ footer {
   }
   .grid-item img {
     left: 0;
-  }
-  #finance .leftFinance h2 {
-    font-size: 70px;
-    font-weight: 900;
-  }
-  #finance .rightFinance h3 {
-    font-size: 40px;
-    font-weight: 900;
-  }
-  #finance .rightFinance h4 {
-    font-size: 19px;
   }
   .videoLeft {
     width: 65%;
@@ -1528,9 +1546,6 @@ footer {
     width: 415px;
     margin: 0 auto;
   }
-  .footerInfo a {
-    font-size: 17px;
-  }
   #tileContentArea .tileContent {
     padding: 40px;
   }
@@ -1556,30 +1571,12 @@ footer {
   .nav {
     padding-left: 0px;
   }
-  #main-container {
-    margin-top: -20px;
-  }
   #heroSection {
     height: 155px;
-  }
-  #finance .leftFinance h2 {
-    font-size: 130px;
-  }
-  #finance .rightFinance h3 {
-    font-size: 72px;
-  }
-  #finance .rightFinance h4 {
-    font-size: 35px;
   }
   .selectionList ul li a {
     font-size: 32px;
     font-weight: 600;
-  }
-  .selectionList a.btn-main {
-    border: 2px solid #e1caa2;
-    width: 200px;
-    font-size: 14px;
-    font-weight: 700;
   }
   .videoRight h2 {
     font-size: 200px;
@@ -1632,20 +1629,9 @@ footer {
     width: 980px;
     background-position-y: 434px;
   }
-  .footerSocials {
-    margin-bottom: 10px;
-    clear: none;
-    padding-top: 0px;
-    left: 32px;
-    width: 272px;
-    margin-left: -32px;
-  }
   .footerInfo h3 {
     font-size: 18px;
     margin: 4px 0 1px 0;
-  }
-  #darkBar .navbar-brand img {
-    margin: 16px auto 0 auto;
   }
   .virtualDesignerControls .nav-tabs li.roomSelector {
     top: -46px;
@@ -1670,13 +1656,6 @@ footer {
   .selectionList ul li a {
     font-size: 42px;
   }
-  .selectionList a.btn-main {
-    width: 240px;
-    font-size: 18px;
-  }
-  #brands h2 {
-    font-size: 32px;
-  }
   .contactInfo ul li a {
     font-size: 18px;
   }
@@ -1697,6 +1676,9 @@ footer {
   .tileBackground {
     width: 1200px;
     background-position-y: 371px;
+  }
+  .footer-nav>ul{
+    column-count:4;
   }
 }
 
