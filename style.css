@@ -291,24 +291,35 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   top: -229px;
 }
 
-#heroSection {
-  height: 100px;
+#heroSection{
+  min-height:265px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding-bottom:30px;
+  padding-top:95px;
 }
-
 #heroSection h1 {
-  position: relative;
-  top: 200px;
   text-align: center;
   color: #f48321;
   font-weight: 900;
+  font-size:60px;
+  margin-top:0;
+  margin-bottom:0;
+  text-transform:uppercase;
 }
 
 #heroSection p {
   position: relative;
-  top: 200px;
   text-align: center;
   color: #fff;
-  font-weight: 700;
+  font-weight: 500;
+  font-size:32px;
+  line-height:1em;
+  text-transform:uppercase;
+}
+#heroSection p>span{
+  font-size:18px;
+  font-weight:400;
 }
 
 .home #mainPhoto {
@@ -754,7 +765,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .iconBackground {
   display: inline-block;
-  background-color: #ededef;
+  background-color: #edede5;
   width: 100%;
   padding-bottom: 40px;
 }
@@ -800,6 +811,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .videoRight {
   display: block;
   padding-top: 30px;
+  padding-bottom:30px;
   color: #f48321;
   text-align: center;
 }
@@ -1438,6 +1450,11 @@ footer {
     padding: 0 0 20px 10px;
   }
 }
+@media (max-width:513px){
+  #heroSection{
+    padding-top:150px;
+  }
+}
 
 @media (max-width:767px){
   .header-logo,
@@ -1470,6 +1487,11 @@ footer {
     column-count:2;
   }
 }
+@media (min-width:767px) and (max-width:1199px){
+  #heroSection{
+    padding-top:150px;
+  }
+}
 @media (max-width:991px){
   .footer-logo{
     display:block;
@@ -1496,9 +1518,6 @@ footer {
   }
   .in {
     background-color: transparent;
-  }
-  #heroSection {
-    height: 135px;
   }
   #mainPhoto {
     top: -195px;
@@ -1571,9 +1590,6 @@ footer {
   .nav {
     padding-left: 0px;
   }
-  #heroSection {
-    height: 155px;
-  }
   .selectionList ul li a {
     font-size: 32px;
     font-weight: 600;
@@ -1640,13 +1656,6 @@ footer {
 
 /* Large devices (large desktops, 1200px and up)============================================================================================ */
 @media (min-width: 1200px) {
-  #heroSection h1 {
-    font-size: 50px;
-    font-weight: 900;
-  }
-  #heroSection p {
-    font-size: 20px;
-  }
   #mainPhoto {
     height: 350px;
   }

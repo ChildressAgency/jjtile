@@ -93,8 +93,7 @@
         </a>
       </section><!-- hp-hero -->
     <?php else: ?>
-      <section id="heroSection">
-        <div id="mainPhoto" style="background-image: url(<?php the_field('hero_image'); ?>);"></div>
+      <section id="heroSection" style="background-image: url(<?php the_field('hero_image'); ?>);">
         <?php if(get_field('hero_title')): ?>
           <h1><?php the_field('hero_title'); ?></h1>
         <?php else: ?>
@@ -102,7 +101,7 @@
         <?php endif; ?>
 
         <?php if(get_field('hero_sub-title')): ?>
-          <h3><?php the_field('hero_sub-title'); ?></h3>
+          <?php the_field('hero_sub-title'); ?>
         <?php endif; ?>
       </section><!-- heroSection -->
     <?php endif; ?>
