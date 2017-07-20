@@ -1097,6 +1097,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #groutColors ul li .colorBox-2:hover>p{
   display:block;
 }
+#groutColors ul li:nth-child(6n+0) .colorBox-2:hover{
+  transform-origin:100% 0%;
+}
 
 #video-2 {
   background-color: #211d1e;
@@ -1482,6 +1485,13 @@ footer {
   }
   .groutRight{
     margin-top:15px;
+  }
+  .tradColors,
+  .designColors{
+    max-width:280px;
+  }
+  #groutColors ul li:nth-child(4n+0) .colorBox-2:hover{
+    transform-origin:100% 0%;
   }
 }
 @media (min-width:767px) and (max-width:1199px){
