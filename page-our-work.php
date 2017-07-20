@@ -19,41 +19,41 @@
         </div><!-- workSelections -->
         <div class="col-xs-12 col-sm-9">
           <div class="att-disp">
-          <div class="tab-content">
-            <?php $c = 1; ?>
-            <?php if(have_rows('gallery')) : while(have_rows('gallery')) : the_row(); ?>
-              <div role="tabpanel" class="tab-pane fade <?php if($c == 1){ echo 'in active'; } ?>" id="gallery<?php echo $c; ?>" >
-                <section id="carousel<?php echo $c; ?>" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner" role="listbox">
-                  <?php
-                  $images = get_sub_field('carousel');
-                  $item_counter = 1;
-                  foreach($images as $image): ?>
-                      <div class="item <?php if ($item_counter == 1) echo 'active'; ?> ">
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
-                      </div><!-- item -->
-                  <?php $item_counter++; endforeach; ?>
-                </div><!-- carousel-inner -->
-          <!-- Controls -->
-
-        <a class="left carousel-control" href="#carousel<?php echo $c; ?>" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel<?php echo $c; ?>" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </section><!-- carousel -->
-  </div><!-- tabpanel -->
+            <div class="tab-content">
+              <?php $c = 1; ?>
+              <?php if(have_rows('gallery')) : while(have_rows('gallery')) : the_row(); ?>
+                <div role="tabpanel" class="tab-pane fade <?php if($c == 1){ echo 'in active'; } ?>" id="gallery<?php echo $c; ?>" >
+                  <section id="carousel<?php echo $c; ?>" class="carousel slide"<?php if($c==1){ echo ' data-ride="carousel"'; } ?>>
+                    <div class="carousel-inner" role="listbox">
+                      <?php
+                        $images = get_sub_field('carousel');
+                        $item_counter = 1;
+                        foreach($images as $image): ?>
+                          <div class="item<?php if($item_counter == 1){ echo ' active'; } ?> ">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
+                          </div><!-- item -->
+                        <?php $item_counter++; endforeach; ?>
+                    </div><!-- carousel-inner -->
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel<?php echo $c; ?>" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel<?php echo $c; ?>" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </section><!-- carousel -->
+                </div><!-- tabpanel -->
               <?php $c++; ?>
-            <?php endwhile; endif; ?>
-          </div><!-- tab-content -->
-        </div><!-- att-disp -->
+              <?php endwhile; endif; ?>
+            </div><!-- tab-content -->
+          </div><!-- att-disp -->
         </div><!-- col-xs-12 col-sm-9 -->
-      </div><!-- row -->
-    </div><!-- container -->
-  </section><!-- ourwork -->
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</section><!-- ourwork -->
 
   <section id="contact">
     <div class="container">

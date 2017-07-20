@@ -398,6 +398,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /*================================= Main SCSS ================================================*/
+
+.page-id-13 #main-container{
+  background-color:#edede5;
+}
 #finance {
   background-color: #211d1e;
   color: #f48321;
@@ -830,7 +834,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #contact{
   margin-top:60px;
 }
-#contact .contact-form .form-group{
+.contact-form .form-group{
   margin-left:15px;
   margin-right:15px;
 }
@@ -840,7 +844,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   background: url(./images/map-background-2.png);
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 34px;
 }
 
 #contact-2 .reviewHeader {
@@ -853,7 +856,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 #followUs {
   background-color: #edede5;
+  padding-top:25px;
   padding-bottom: 60px;
+  margin-bottom:-60px;
 }
 
 #followUs h2 {
@@ -958,10 +963,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   padding: 20px 10px;
 }
 
-#ourWork .carousel-inner {
-  height: auto;
-  margin-top: 40px;
-}
 
 #ourWork .ceramic {
   background-image: url(./images/ceramic-tinted.png);
@@ -976,6 +977,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 #ourWork .nav li a:hover {
   background: transparent;
+}
+#ourWork .att-nav,
+#ourWork .att-disp{
+  margin-top:25px;
 }
 
 #ourWork .att-nav ul li {
@@ -1555,9 +1560,6 @@ footer {
     width: 140px;
     margin-bottom: 6.5px;
   }
-  #ourWork .carousel-inner {
-    margin-top: 62px;
-  }
   #groutContentArea .stpList ul li {
     font-size: 12px;
   }
@@ -1616,9 +1618,6 @@ footer {
   }
   #followUs h2 {
     font-size: 48px;
-  }
-  #ourWork .att-nav {
-    margin-top: 10px;
   }
   #ourWork .att-nav ul li {
     width: 180px;
