@@ -361,7 +361,7 @@ function bootstrap_theme_enqueue_scripts() {
   );
   wp_register_script(
     'lightslider',
-    $template_url . '/js/lightslide.min.js',
+    $template_url . '/js/lightslider.min.js',
     array('jquery'),
     '',
     true
@@ -474,9 +474,10 @@ add_action('wp_ajax_jjtile_fetch_selection', 'jjtile_fetch_selection');
 add_action('wp_ajax_nopriv_jjtile_fetch_selection', 'jjtile_fetch_selection');
 function jjtile_fetch_selection(){
   $selection = $_POST['selection'];
-  $tile_page = get_page_by_path('tile');
-  $tile_page_id = $tile_page->ID;
-  $tile_types = get_field('tile_types');
+  //$tile_page = get_page_by_path('tile');
+  //$tile_page_id = $tile_page->ID;
+  $tile_page_id = 8;
+  $tile_types = get_field('tile_types', $tile_page_id);
 
   $return_html = '';
 
@@ -484,7 +485,7 @@ function jjtile_fetch_selection(){
     if($tile['tile_type'] == $selection){
       $images = $tile['tile_gallery'];
       if($images){
-        $return_html .= '<ul id="vertical">';
+        $return_html .= '<ul class="tile-slider">';
         foreach($images as $image){
           $return_html .= '<li data-thumb="' . $image['url'] . '">';
           $return_html .= '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" />';
@@ -497,10 +498,12 @@ function jjtile_fetch_selection(){
         $return_html .= '<p>We don\'t currently have any selections for that type of tile.</p>';
       }
 
-      return $return_html;
+      echo $return_html;
     }
     else{
       continue;
     }
   }
+  //return $tile_types;
+  die();
 }

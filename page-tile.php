@@ -18,7 +18,7 @@
 					<div class="tab-content">
 						<?php if(have_rows('tile_types')): $c=1; while(have_rows('tile_types')): the_row(); ?>
 							<div role="tabpanel" class="tab-pane fade<?php if($c==1){ echo ' in active'; } ?>" id="<?php the_sub_field('tile_type'); ?>">
-								<p>Retrieving tile selection, please wait...</p>
+
 							</div>
 						<?php $c++; endwhile; endif; ?>
 					</div>

@@ -63,22 +63,36 @@
 			$(targetPanel + '>.carousel').carousel('cycle');
 		});
 
-		$('#viewSelection a[data-toggle="tab"]').on('shown.bs-tab', function(e){
-			var target = $(e.target).data('tile_type');
-			if($(target).is(':empty')){
+		$('#viewSelection a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+			var targetTile = $(e.target).data('tile_type');
+
+			//if($('#' + targetTile).is(':empty')){
 				$.ajax({
 					url:jjtileAjax.ajaxurl,
 					type:"POST",
-					data:({ action:'jjtile_fetch_selection', selection:target}),
+					data:({ action:'jjtile_fetch_selection', selection:targetTile }),
 					error: function(result){
-						$('#' + target).html('<p>Sorry, the gallery could not be retrieved.</p>');
+						$('#' + targetTile).html('<p>Sorry, the gallery could not be retrieved.</p>');
 					},
 					success: function(result){
-						$('#' + target).html(result);
+						$('#' + targetTile).html(result);
+						if(typeof $.fn.lightSlider == 'function'){
+							$('#viewSelection .tile-slider').lightSlider({
+								gallery:true,
+								item:1,
+								vertical:true,
+								verticalHeight:375,
+								vThumbWidth:50,
+								thumbItem:8,
+								thumbMargin:4,
+								slideMargin:0
+							});
+						}
 					}
 				});
-			}
+			//}
 		});
+
 //next
 
 //end here
