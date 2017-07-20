@@ -72,25 +72,6 @@ body{
   font-weight: 600;
 }
 
-.button-grout, #groutContentArea .groutLeft a.btn-main, #groutContentArea .groutRight a.btn-main {
-  display: block;
-  position: relative;
-  border: solid 1px #211d1e;
-  color: #211d1e;
-  padding: 5px;
-  width: 130px;
-  text-align: center;
-  margin: 0 auto 30px auto;
-  font-size: 10px;
-  text-decoration: none;
-}
-
-.button-grout:hover, #groutContentArea .groutLeft a.btn-main:hover, #groutContentArea .groutRight a.btn-main:hover {
-  border: solid 1px #fff;
-  color: #fff;
-  background-color: #211d1e;
-}
-
 .sprite, .aboutIcons .sprite-1, .aboutIcons .sprite-2, .aboutIcons .sprite-3, .aboutIcons .sprite-4, .aboutIcons .sprite-5 {
   display: inline-block;
   width: 143px;
@@ -871,7 +852,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #followUs {
-  background-color: #ededef;
+  background-color: #edede5;
   padding-bottom: 60px;
 }
 
@@ -1013,17 +994,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #groutContentArea {
-  background-color: #ededef;
-  margin-top: -50px;
-  padding-top: 50px;
+  background-color: #edede5;
 }
-
-#groutContentArea .groutLeft a.btn-main {
-  float: right;
+.groutLeft{
+  text-align:right;
 }
-
-#groutContentArea .groutRight a.btn-main {
-  float: left;
+#groutContentArea .btn-main{
+  color:#000;
+  border-color:#000;
+}
+#groutContentArea .btn-main:hover,
+#groutContentArea .btn-main:focus{
+  background-color:#000;
+  color:#fff;
+}
+.stp-list{
+  margin-top:40px;
 }
 
 #groutContentArea .stpLogo {
@@ -1059,8 +1045,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 700;
 }
 
-#groutColors {
-  padding: 20px;
+.tradColors,
+.designColors{
+  max-width:415px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.designColors{
+  margin-top:40px;
 }
 
 #groutColors h3 {
@@ -1076,42 +1068,40 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #groutColors ul li {
   float: left;
   padding: 5px;
-  height: 85px;
+  height: 65px;
   width: 65px;
 }
 
 #groutColors ul li .colorBox-2 {
   width: 55px;
   height: 55px;
-  border: solid 1px transparent;
-  transition: all .5s ease-in-out;
+  transition: all .5s ease;
+  position:relative;
+  z-index:0;
 }
 
 #groutColors ul li .colorBox-2:hover {
-  width: 80px;
-  position: absolute;
-  padding: 5px;
-  transform: scale(1.2);
+  padding: 2px;
+  transform: scale(2.2);
+  transform-origin:0 0;
+  z-index:2;
 }
-
-#groutColors ul li img {
-  transition: all .5s ease-in-out;
+#groutColors ul li .colorBox-2>p{
+  position:absolute;
+  bottom:0;
+  margin-bottom:0;
+  font-size:12px;
+  line-height:1em;
+  display:none;
 }
-
-#groutColors ul li img:hover {
-  width: 100px;
-  position: absolute;
-  padding: 5px;
-  transform: scale(1.5);
-}
-
-#groutColors ul li p {
-  font-size: 8px;
+#groutColors ul li .colorBox-2:hover>p{
+  display:block;
 }
 
 #video-2 {
   background-color: #211d1e;
   padding: 40px 0;
+  margin-top:40px;
 }
 
 #tileContentArea .tileContent {
@@ -1171,7 +1161,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .virtualDesignerControls {
   padding: 10px 32px;
-  background-color: #ededef;
+  background-color: #edede5;
 }
 
 .virtualDesignerControls h3 {
@@ -1486,6 +1476,13 @@ footer {
   .footer-nav>ul{
     column-count:2;
   }
+  .groutRight,
+  .groutLeft{
+    text-align:center;
+  }
+  .groutRight{
+    margin-top:15px;
+  }
 }
 @media (min-width:767px) and (max-width:1199px){
   #heroSection{
@@ -1556,14 +1553,6 @@ footer {
   }
   #groutContentArea .stpList ul li span {
     font-size: 10px;
-  }
-  #groutColors {
-    padding: 20px 20px 70px 20px;
-  }
-  #groutColors .centered {
-    display: block;
-    width: 415px;
-    margin: 0 auto;
   }
   #tileContentArea .tileContent {
     padding: 40px;
