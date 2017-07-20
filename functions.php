@@ -360,6 +360,13 @@ function bootstrap_theme_enqueue_scripts() {
     false
   );
   wp_register_script(
+    'lightslider',
+    $template_url . '/js/lightslide.min.js',
+    array('jquery'),
+    '',
+    true
+  );
+  wp_register_script(
     'jjtile-scripts',
     $template_url . '/js/script.js',
     array('jquery'),
@@ -369,14 +376,21 @@ function bootstrap_theme_enqueue_scripts() {
 
  	wp_enqueue_script('bootstrap-script');
 	wp_enqueue_script('google-maps');
+  if(is_page('tile')){
+    wp_enqueue_script('lightslider');
+  }
 	wp_enqueue_script( 'jjtile-scripts' );
   
   wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
   wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Heebo:300,400,500,700,900');
+  wp_register_style('lightslider-css', $template_url . '/css/lightslider.min.css');
 	wp_register_style( 'main-style', get_stylesheet_uri() );
 
   wp_enqueue_style('bootstrap-css');
   wp_enqueue_style('google-fonts');
+  if(is_page('tile')){
+    wp_enqueue_style('lightslider-css');
+  }
   wp_enqueue_style('main-style');
 
 	// Load Thread comments WordPress script.
@@ -459,5 +473,34 @@ add_action('acf/init', 'my_acf_init');
 add_action('wp_ajax_jjtile_fetch_selection', 'jjtile_fetch_selection');
 add_action('wp_ajax_nopriv_jjtile_fetch_selection', 'jjtile_fetch_selection');
 function jjtile_fetch_selection(){
+  $selection = $_POST['selection'];
+  $tile_page = get_page_by_path('tile');
+  $tile_page_id = $tile_page->ID;
+  $tile_types = get_field('tile_types');
 
+  $return_html = '';
+
+  foreach($tile_types as $tile){
+    if($tile['tile_type'] == $selection){
+      $images = $tile['tile_gallery'];
+      if($images){
+        $return_html .= '<ul id="vertical">';
+        foreach($images as $image){
+          $return_html .= '<li data-thumb="' . $image['url'] . '">';
+          $return_html .= '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" />';
+          $return_html .= '<p>' . $image['caption'] . '</p>';
+          $return_html .= '</li>';
+        }
+        $return_html .= '</ul>';
+      }
+      else{
+        $return_html .= '<p>We don\'t currently have any selections for that type of tile.</p>';
+      }
+
+      return $return_html;
+    }
+    else{
+      continue;
+    }
+  }
 }
