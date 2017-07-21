@@ -2,8 +2,8 @@
 <div id="main-container" >
 	<section id="viewSelection">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
+			<div class="row selection-slider">
+				<div class="col-sm-4">
 					<h2>Our Tile Selection</h2>
 					<ul class="nav nav-stacked">
 						<?php if(have_rows('tile_types')): $i=1; while(have_rows('tile_types')): the_row(); ?>
@@ -14,7 +14,7 @@
 						<?php $i++; endwhile; endif; ?>
 					</ul>
 				</div>
-				<div class="col-sm-9">
+				<div class="col-sm-8">
 					<div class="tab-content">
 						<?php if(have_rows('tile_types')): $c=1; while(have_rows('tile_types')): the_row(); ?>
 							<div role="tabpanel" class="tab-pane fade<?php if($c==1){ echo ' in active'; } ?>" id="<?php the_sub_field('tile_type'); ?>">

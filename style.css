@@ -1436,6 +1436,48 @@ footer {
   color: #f48321;
 }
 
+#viewSelection .selection-slider{
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#viewSelection .selection-slider h2{
+  margin-top:40px;
+  font-size:24px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+#viewSelection .selection-slider .nav>li>a{
+  color:#f58422;
+  font-weight:500;
+  text-transform:uppercase;
+}
+#viewSelection .selection-slider .nav>li>a:hover,
+#viewSelection .selection-slider .nav>li>a:focus,
+#viewSelection .selection-slider .nav>li.active>a{
+  color:#3e3935;
+  background:transparent;
+}
+#viewSelection .lSSlideOuter{
+  padding-right:0 !important;
+  padding-left:60px;
+}
+#viewSelection .lSSlideOuter.vertical .lSGallery{
+  left:0;
+}
+#viewSelection .lslide>img{
+  max-height:375px;
+}
+#viewSelection .selection-slider .tab-content{
+  margin-top:40px;
+}
+#viewSelection .tab-pane{
+  max-width:440px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
 /*================================================== Note==============================================================================*/
 /*============================== Any thing added to the  main css directly please add below this line =================================*/
 /*================================ if added in the responsive css please make comments of additions ===================================*/
