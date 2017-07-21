@@ -18,7 +18,18 @@
 					<div class="tab-content">
 						<?php if(have_rows('tile_types')): $c=1; while(have_rows('tile_types')): the_row(); ?>
 							<div role="tabpanel" class="tab-pane fade<?php if($c==1){ echo ' in active'; } ?>" id="<?php the_sub_field('tile_type'); ?>">
-
+								<?php if(get_sub_field('tile_type') == 'Ceramic'):
+									$images = get_sub_field('tile_gallery'); if($images): ?>
+										<ul class="tile-slider">
+											<?php foreach($images as $image): ?>
+												<li data-thumb="<?php echo $image['url']; ?>">
+													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+													<p><?php echo $image['caption']; ?></p>
+												</li>
+											<?php endforeach; ?>
+										</ul>
+									<?php endif; ?>
+								<?php endif; ?>
 							</div>
 						<?php $c++; endwhile; endif; ?>
 					</div>
