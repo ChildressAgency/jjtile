@@ -1112,9 +1112,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top:40px;
 }
 
-#tileContentArea .tileContent {
-  padding: 20px;
-}
 
 /* Bounce To Bottom */
 .hvr-bounce-to-bottom {
@@ -1482,6 +1479,91 @@ footer {
 #viewSelection .lSSlideOuter.vertical .lSAction>.lSNext{
   bottom:30px;
 }
+#tileContentArea{
+  background-color:#edede5;
+  margin-top:40px;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#tileContentArea .tile-info{
+  max-width:650px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.tile-info-item{
+  padding-left:30px;
+  position:relative;
+  margin-bottom:30px;
+}
+.tile-info-item:before{
+  content:"";
+  position:absolute;
+  background-image:url(images/tile-icons.png);
+  background-repeat:no-repeat;
+  left:0;
+}
+.tile-info-item>h3{
+  color:#f58422;
+  font-size:18px;
+  font-weight:500;
+  text-transform:uppercase;
+  margin-top:0;
+  margin-bottom:5px;
+}
+.tile-info-item>p{
+  line-height:1.2em;
+  font-size:13px;
+}
+.tile-info-item.best-value:before{
+  background-position:-54px -2px;
+  height:18px;
+  width:17px;
+}
+.tile-info-item.design-versatility:before{
+  background-position:-22px 0px;
+  height:24px;
+  width:25px;
+}
+.tile-info-item.clean-healthy-choice:before{
+  background-position:-24px -27px;
+  height:25px;
+  width:23px;
+}
+.tile-info-item.durable:before{
+  background-position:0 0;
+  height:23px;
+  width:17px;
+}
+.tile-info-item.rich-artistic-heritage:before{
+  background-position:-107px -1px;
+  height:21px;
+  width:20px;
+}
+.tile-info-item.low-maintenance:before{
+  background-position:0px -31px;
+  height:17px;
+  width:18px;
+}
+.tile-info-item.water-resistance:before{
+  background-position:-54px -29px;
+  height:21px;
+  width:15px;
+}
+.tile-info-item.fire-resistance:before{
+  background-position:-81px -1px;
+  height:20px;
+  width:17px;
+}
+.tile-info-item.fade-resistant:before{
+  background-position:-102px -28px;
+  height:23px;
+  width:24px;
+}
+.tile-info-item.natural-environmental:before{
+  background-position:-78px -30px;
+  height:19px;
+  width:19px;
+}
 
 
 /*================================================== Note==============================================================================*/
@@ -1613,9 +1695,6 @@ footer {
   }
   #groutContentArea .stpList ul li span {
     font-size: 10px;
-  }
-  #tileContentArea .tileContent {
-    padding: 40px;
   }
   .tileBackground {
     height: 400px;
