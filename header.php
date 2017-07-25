@@ -92,6 +92,10 @@
           <span class="sr-only">Next</span>
         </a>
       </section><!-- hp-hero -->
+    <?php elseif(is_page('contact')): ?>
+      <section id="heroSection" class="contact-hero">
+        <h1>CONTACT US</h1>
+      </section>
     <?php else: ?>
       <section id="heroSection" style="background-image: url(<?php the_field('hero_image'); ?>);">
         <?php if(get_field('hero_title')): ?>
