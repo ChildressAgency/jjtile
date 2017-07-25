@@ -1264,8 +1264,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .virtualDesignerControls .nav-tabs li.roomSelector {
   position: relative;
-  height: 20px;
-  top: -17px;
 }
 
 .virtualDesignerControls .nav-tabs > li.active > a, .virtualDesignerControls .nav-tabs > li.active > a:focus, .virtualDesignerControls .nav-tabs > li.active > a:hover {
@@ -1775,15 +1773,12 @@ footer {
   .tileBackground {
     height: 691px;
     background-size: contain;
-    width: 980px;
+    /*width: 980px;*/
     background-position-y: 434px;
   }
   .footerInfo h3 {
     font-size: 18px;
     margin: 4px 0 1px 0;
-  }
-  .virtualDesignerControls .nav-tabs li.roomSelector {
-    top: -46px;
   }
 }
 
@@ -1816,7 +1811,7 @@ footer {
     left: 82%;
   }
   .tileBackground {
-    width: 1200px;
+    /*width: 1200px;*/
     background-position-y: 371px;
   }
   .footer-nav>ul{
@@ -1827,7 +1822,7 @@ footer {
 /* Large devices (large desktops, 1600px and up)============================================================================================ */
 @media (min-width: 1600px) {
   .tileBackground {
-    width: 1280px;
+    /*width: 1280px;*/
     height: 750px;
     background-position-y: 381px;
   }

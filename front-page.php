@@ -85,7 +85,7 @@
 						<li>TRAVERTINE</li>
 						<li>TUMBLE</li>
 					</ul>
-					<a href="<?php echo home_url(); ?>/virtual-designer" class="btn-main btn-tan">VIEW OUR SELECTION</a>
+					<a href="<?php echo home_url('tile'); ?>" class="btn-main btn-tan">VIEW OUR SELECTION</a>
 					<a href="<?php echo home_url(); ?>/virtual-designer" class="btn-main btn-tan">VIRTUAL DESIGNER</a>
 				</div>
 		</div><!-- container -->
@@ -96,7 +96,7 @@
 			<div class="brand-list">
 				<ul class="list-unstyled list-inline">
 					<?php if( have_rows('brands') ): while ( have_rows('brands') ) : the_row();?>
-						<li><img src="<?php the_sub_field('brand_icon'); ?>" alt="Icon" /></li>
+						<li><a href="<?php the_sub_field('brand_link'); ?>" target="_blank"><img src="<?php the_sub_field('brand_icon'); ?>" alt="Icon" /></a></li>
 					<?php endwhile; endif;?>
 				</ul>
 			</div>
