@@ -39,7 +39,7 @@
               <a href="tel:5407100303">540-710-0303</a>
             </div>
             <div class="hours">
-              <p>MON - WED 8A - 6P<br />THU - FRI 8A - 7P<br />SAT 8A - 5P</p>
+              <p>MON - FRI: 8A - 6P<br />SAT: 8A - 5P<br />SUN: closed</p>
             </div>
           </div><!-- flex -->
         </div>
